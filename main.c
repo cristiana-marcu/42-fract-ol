@@ -6,7 +6,7 @@
 /*   By: cristianamarcu <cristianamarcu@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/11/15 19:27:02 by cristianama      ###   ########.fr       */
+/*   Updated: 2021/11/15 19:52:07 by cristianama      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,23 @@ int	main(void)
 	t_data	img;
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_win = mlx_new_window(mlx, 700, 700, "Hello world!");
 	img.img = mlx_new_image(mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 				&img.endian);
-	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+
+	int width = 100;
+	int height;
+	while (width > 0)
+	{
+		height = 100;
+		while (height > 0)
+		{
+			my_mlx_pixel_put(&img, width, height, 0x00FF0000);
+			height--;
+		}
+		width--;
+	}
+	mlx_put_image_to_window(mlx, mlx_win, img.img, 150, 150);
 	mlx_loop(mlx);
 }
