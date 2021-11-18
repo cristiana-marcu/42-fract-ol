@@ -6,7 +6,7 @@
 /*   By: cristianamarcu <cristianamarcu@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/11/18 21:27:15 by cristianama      ###   ########.fr       */
+/*   Updated: 2021/11/18 21:46:35 by cristianama      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void render_next_frame(t_data *img) //Futuro parámetro "t_mlx *mlx" para hacer 
 t_mlx	*init()
 {
 	t_mlx	*mlx;
-	
+
 	mlx = (t_mlx*)malloc(sizeof(t_mlx));
 	if (mlx == NULL)
 		return (NULL);
