@@ -6,7 +6,7 @@
 /*   By: cristianamarcu <cristianamarcu@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/11/20 20:28:24 by cristianama      ###   ########.fr       */
+/*   Updated: 2021/11/28 17:00:41 by cristianama      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,19 @@ int mandelbrot(t_mlx *mlx, t_complex z, t_complex c)
 	return (i);
 }
 
+int calculate_color(int i, t_mlx *mlx) {
+	int t;
+	int r;
+	int g;
+	int b;
+	
+	t = 0;
+	r = (65 * i) / mlx->fractal->max_iter;
+	g = (95 * i) / mlx->fractal->max_iter;
+	b = (185 * i) / mlx->fractal->max_iter;
+	return (create_trgb(t, r, g, b));
+}
+
 void fill_pixel(int x, int y, t_data *img, t_mlx *mlx)
 {
 	t_complex	z;
@@ -68,8 +81,8 @@ void fill_pixel(int x, int y, t_data *img, t_mlx *mlx)
 		i = mandelbrot(mlx, z, c);
 	if (i == mlx->fractal->max_iter)
 		my_mlx_pixel_put(img, x, y, create_trgb(0, 187, 0, 47));
-	else
-		my_mlx_pixel_put(img, x, y, create_trgb(0, 0, 187, 47));
+	else //TODO calcular color en función de i
+		my_mlx_pixel_put(img, x, y, calculate_color(i, mlx));
 }
 
 void fractol(t_data *img, t_mlx *mlx)
