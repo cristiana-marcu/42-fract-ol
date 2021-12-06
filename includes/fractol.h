@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/06 14:58:11 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 19:24:05 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 //Keys
 # define K_ESC	53
+# define MOUSE_SCROLL_UP	4
+# define MOUSE_SCROLL_DOWN	5
 
 //Window
 # define WIN_WIDTH 1280
@@ -28,6 +30,11 @@
 enum	e_fractal{MANDELBROT, JULIA};
 
 //Structures
+typedef struct	s_complex
+{
+	double	r;
+	double	i;
+}	t_complex;
 
 typedef struct	s_viewport
 {
@@ -53,13 +60,11 @@ typedef struct	s_data {
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
+	double		zoom;
+	int			offset_x;
+	int			offset_y;
+	t_complex	julia;
 }	t_data;
-
-typedef struct	s_complex
-{
-	double	r;
-	double	i;
-}	t_complex;
 
 int		mandelbrot(t_data *mlx, t_complex z, t_complex c);
 int		hook_keydown(int key, t_data *mlx);
@@ -71,5 +76,9 @@ void	my_mlx_pixel_put(t_data *mlx, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
 int		calculate_color(int i, t_data *mlx);
 void	fill_pixel(int x, int y, t_data *mlx);
+int		hook_mouse_scroll(int button, int x, int y, t_data *mlx);
+double	interpolate(double start, double end, double interpolation);
+void	recalculate_viewport(t_complex mouse, t_data *mlx, double scale);
+int		julia(t_data *mlx, t_complex z);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/22 16:47:15 by cmarcu            #+#    #+#              #
-#    Updated: 2021/12/06 13:45:44 by cmarcu           ###   ########.fr        #
+#    Updated: 2021/12/06 19:24:39 by cmarcu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SOURCES		=	main.c \
 				key_hook.c \
 				fractol.c \
 				color.c \
-				mandelbrot.c
+				mandelbrot.c \
+				mouse_hook.c \
+				julia.c
 
 SRCS		=	$(addprefix $(SRC_PATH), $(SOURCES))
 OBJS		=	$(patsubst $(SRC_PATH)%, $(OBJ_PATH)%, $(SRCS:.c=.o))
