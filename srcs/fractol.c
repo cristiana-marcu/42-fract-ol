@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:48:18 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 19:39:25 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 22:37:31 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	match_fractal(t_data *mlx, char *argv)
 {
-	mlx->fractal = (t_fractal*)malloc(sizeof(t_fractal));
+	mlx->fractal = (t_fractal *)malloc(sizeof(t_fractal));
 	if (!ft_strncmp(argv, "Mandelbrot", 10))
 	{
 		mlx->fractal->name = MANDELBROT;
@@ -38,7 +38,7 @@ int	match_fractal(t_data *mlx, char *argv)
 	return (1);
 }
 
-void fractol(t_data *mlx)
+void	fractol(t_data *mlx)
 {
 	int	x;
 	int	y;
@@ -69,7 +69,7 @@ void	fill_pixel(int x, int y, t_data *mlx)
 	//TODO find a better way to convert pixel to complex
 	c.r = (double)x / mlx->zoom + mlx->fractal->viewport.xmin;
 	c.i = (double)y / mlx->zoom + mlx->fractal->viewport.ymin;
-	z = (t_complex) {.r = 0, .i = 0};
+	z = (t_complex){.r = 0, .i = 0};
 	i = 0;
 	if (mlx->fractal->name == MANDELBROT)
 		i = mandelbrot(mlx, z, c);

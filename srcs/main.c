@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/12/06 22:34:52 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 22:44:39 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 t_data	*init(char **argv)
 {
 	t_data	*mlx;
-	mlx = (t_data*)malloc(sizeof(t_data));
+
+	mlx = (t_data *)malloc(sizeof(t_data));
 	if (mlx == NULL)
 		return (NULL);
 	mlx->mlx = mlx_init();
@@ -33,12 +34,12 @@ t_data	*init(char **argv)
 	return (mlx);
 }
 
-void init_image(t_data *mlx)
+void	init_image(t_data *mlx)
 {
 	mlx->img = mlx_new_image(mlx->mlx, WIN_WIDTH, WIN_HEIGHT);
 	mlx->addr = mlx_get_data_addr(mlx->img,
-				&mlx->bits_per_pixel, &mlx->line_length,
-				&mlx->endian);
+			&mlx->bits_per_pixel, &mlx->line_length,
+			&mlx->endian);
 }
 
 int	main(int argc, char **argv)
@@ -51,7 +52,6 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 		init_julias(argv[2], mlx);
 	fractol(mlx);
-
 	mlx_key_hook(mlx->win, hook_keydown, mlx);
 	mlx_mouse_hook(mlx->win, hook_mouse_scroll, mlx);
 	mlx_loop(mlx->mlx);
