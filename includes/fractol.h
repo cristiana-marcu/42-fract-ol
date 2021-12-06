@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/06 19:24:05 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 21:14:29 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@
 # include <stdio.h>
 
 //Keys
-# define K_ESC	53
+# define K_ESC			53
+# define K_TAB			9
+# define K_ARR_LEFT		123
+# define K_ARR_UP		126
+# define K_ARR_RIGHT	124
+# define K_ARR_DOWN		125
+
 # define MOUSE_SCROLL_UP	4
 # define MOUSE_SCROLL_DOWN	5
 
@@ -80,5 +86,6 @@ int		hook_mouse_scroll(int button, int x, int y, t_data *mlx);
 double	interpolate(double start, double end, double interpolation);
 void	recalculate_viewport(t_complex mouse, t_data *mlx, double scale);
 int		julia(t_data *mlx, t_complex z);
+void	move(int key, t_data *mlx);
 
 #endif
