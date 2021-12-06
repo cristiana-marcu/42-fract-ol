@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/06 22:20:06 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 22:47:55 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@
 enum	e_fractal{MANDELBROT, JULIA};
 
 //Structures
-typedef struct	s_complex
+typedef struct s_complex
 {
 	double	r;
 	double	i;
 }	t_complex;
 
-typedef struct	s_viewport
+typedef struct s_viewport
 {
 	double	xmin;
 	double	xmax;
@@ -57,7 +57,7 @@ typedef struct s_fractal
 	int				max_iter;
 }	t_fractal;
 
-typedef struct	s_data {
+typedef struct s_data {
 	void		*mlx;
 	void		*win;
 	t_fractal	*fractal;
