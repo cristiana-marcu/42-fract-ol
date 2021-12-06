@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cristianamarcu <cristianamarcu@student.    +#+  +:+       +#+        */
+/*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/11/20 20:09:07 by cristianama      ###   ########.fr       */
+/*   Updated: 2021/12/06 14:58:11 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@
 enum	e_fractal{MANDELBROT, JULIA};
 
 //Structures
-typedef struct	s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
 
 typedef struct	s_viewport
 {
@@ -52,16 +44,32 @@ typedef struct s_fractal
 	int				max_iter;
 }	t_fractal;
 
-typedef struct	s_mlx {
+typedef struct	s_data {
 	void		*mlx;
 	void		*win;
 	t_fractal	*fractal;
-}	t_mlx;
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+}	t_data;
 
 typedef struct	s_complex
 {
 	double	r;
 	double	i;
 }	t_complex;
+
+int		mandelbrot(t_data *mlx, t_complex z, t_complex c);
+int		hook_keydown(int key, t_data *mlx);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	print_error(char *message);
+int		match_fractal(t_data *mlx, char *argv);
+void	fractol(t_data *mlx);
+void	my_mlx_pixel_put(t_data *mlx, int x, int y, int color);
+int		create_trgb(int t, int r, int g, int b);
+int		calculate_color(int i, t_data *mlx);
+void	fill_pixel(int x, int y, t_data *mlx);
 
 #endif
