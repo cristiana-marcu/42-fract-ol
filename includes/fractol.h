@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/06 21:14:29 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 22:20:06 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct	s_data {
 	t_complex	julia;
 }	t_data;
 
+t_data	*init(char **argv);
 int		mandelbrot(t_data *mlx, t_complex z, t_complex c);
 int		hook_keydown(int key, t_data *mlx);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -87,5 +88,7 @@ double	interpolate(double start, double end, double interpolation);
 void	recalculate_viewport(t_complex mouse, t_data *mlx, double scale);
 int		julia(t_data *mlx, t_complex z);
 void	move(int key, t_data *mlx);
+void	init_julias(char *argv, t_data *mlx);
+void	init_image(t_data *mlx);
 
 #endif
