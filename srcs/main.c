@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/12/06 22:24:17 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/06 22:34:52 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ t_data	*init(char **argv)
 		print_error("Failed creating window");
 	if (!match_fractal(mlx, argv[1]))
 		print_error("Wrong argument. Available fractals - [Mandelbrot] [Julia]");
-	init_julias(argv[2], mlx);
 	init_image(mlx);
 	mlx->zoom = 200;
 	mlx->offset_x = 0;
@@ -49,7 +48,8 @@ int	main(int argc, char **argv)
 	if (argc != 2 && ft_strncmp(argv[1], "Julia", 5) != 0)
 		print_error("Wrong number of arguments. Available fractals - [Mandelbrot] [Julia]");
 	mlx = init(argv);
-
+	if (argc == 3)
+		init_julias(argv[2], mlx);
 	fractol(mlx);
 
 	mlx_key_hook(mlx->win, hook_keydown, mlx);
