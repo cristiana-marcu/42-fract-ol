@@ -6,7 +6,7 @@
 #    By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/22 16:47:15 by cmarcu            #+#    #+#              #
-#    Updated: 2021/12/06 19:24:39 by cmarcu           ###   ########.fr        #
+#    Updated: 2021/12/07 19:08:20 by cmarcu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRCS		=	$(addprefix $(SRC_PATH), $(SOURCES))
 OBJS		=	$(patsubst $(SRC_PATH)%, $(OBJ_PATH)%, $(SRCS:.c=.o))
 
 CC	= gcc
-CFLAGS		=	-Wall -Wextra -Werror $(SANITIZE)
-SANITIZE	=	-g3 -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror #$(SANITIZE)
+#SANITIZE	=	-g3 -fsanitize=address
 RM			=	rm -f
 INCLUDES	=	-Iincludes/
 MLX			=	mlx/
