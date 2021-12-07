@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/07 16:07:09 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 19:00:44 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ int		create_trgb(int t, int r, int g, int b);
 int		calculate_color(int i, t_data *mlx);
 void	fill_pixel(int x, int y, t_data *mlx);
 int		hook_mouse_scroll(int button, int x, int y, t_data *mlx);
-double	interpolate(double start, double end, double interpolation);
-void	recalculate_viewport(t_complex mouse, t_data *mlx, double scale);
 int		julia(t_data *mlx, t_complex z);
 void	move(int key, t_data *mlx);
 void	init_julias(char *argv, t_data *mlx);
