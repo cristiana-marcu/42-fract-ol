@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:56:42 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/07 19:00:36 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 19:05:48 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	hook_mouse_scroll(int button, int x, int y, t_data *mlx)
 	}
 	return (1);
 }
-
