@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:48:18 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/07 14:56:18 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 16:28:37 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void	fractol(t_data *mlx)
 	int	y;
 
 	y = 0;
-	//Intento de que el zoom siga la posiciçon del ratón
-	mlx->fractal->viewport.xmin = ((mlx->offset_x + (WIN_WIDTH >> 1)) / (mlx->zoom / 2)) / -2;
-	mlx->fractal->viewport.ymin = ((mlx->offset_y + (WIN_HEIGHT >> 1)) / (mlx->zoom / 2)) / -2;
+	mlx->fractal->viewport.xmin = ((mlx->offset_x + (WIN_WIDTH >> 1))
+			/ (mlx->zoom / 2)) / -2;
+	mlx->fractal->viewport.ymin = ((mlx->offset_y + (WIN_HEIGHT >> 1))
+			/ (mlx->zoom / 2)) / -2;
 	while (y < WIN_HEIGHT)
 	{
 		x = 0;

@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:51:19 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/07 01:03:37 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 16:25:04 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	create_trgb(int t, int r, int g, int b)
 
 int	calculate_color(int i, t_data *mlx)
 {
-	int	t;
-	int	r;
-	int	g;
-	int	b;
+	int		t;
+	int		r;
+	int		g;
+	int		b;
 	double	aux;
 
 	t = 0;

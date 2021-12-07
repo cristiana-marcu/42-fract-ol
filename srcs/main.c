@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/12/07 13:38:16 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 16:29:39 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_data	*init(char **argv)
 	if (!mlx->win)
 		print_error("Failed creating window");
 	if (!match_fractal(mlx, argv[1]))
-		print_error("Wrong argument. Available fractals - [Mandelbrot] [Julia]");
+		print_error("Wrong argument. Type [Mandelbrot] [Julia]");
 	init_image(mlx);
 	mlx->zoom = 300;
 	mlx->offset_x = WIN_WIDTH / 8;
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	t_data	*mlx;
 
 	if (argc != 2 && ft_strncmp(argv[1], "Julia", 5) != 0)
-		print_error("Wrong number of arguments. Available fractals - [Mandelbrot] [Julia]");
+		print_error("Wrong number of arguments. Type [Mandelbrot] [Julia]");
 	mlx = init(argv);
 	if (argc == 3)
 		init_julias(argv[2], mlx);

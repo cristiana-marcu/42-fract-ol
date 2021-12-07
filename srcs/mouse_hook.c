@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:56:42 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/07 14:46:31 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 18:58:04 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	hook_mouse_scroll(int button, int x, int y, t_data *mlx)
 		mlx->offset_x = round(mlx->offset_x + ((WIN_WIDTH >> 1) - x) * scale);
 		mlx->offset_y = round(mlx->offset_y + ((WIN_HEIGHT >> 1) - y) * scale);
 		mlx->zoom *= scale;
-		//recalculate_viewport(mouse, mlx, scale);
+		recalculate_viewport(mouse, mlx, scale);
 		fractol(mlx);
 	}
 	return (1);
@@ -43,14 +43,14 @@ void	recalculate_viewport(t_complex mouse, t_data *mlx, double scale)
 	double	interpolation;
 
 	interpolation = 1.0 / scale;
-	mlx->fractal->viewport.xmin
-		= interpolate(mouse.r + mlx->offset_x, mlx->fractal->viewport.xmin, interpolation);
-	mlx->fractal->viewport.xmax
-		= interpolate(mouse.i + mlx->offset_x, mlx->fractal->viewport.xmax, interpolation);
-	mlx->fractal->viewport.ymin
-		= interpolate(mouse.r + mlx->offset_y, mlx->fractal->viewport.ymin, interpolation);
-	mlx->fractal->viewport.ymax
-		= interpolate(mouse.i + mlx->offset_y, mlx->fractal->viewport.ymax, interpolation);
+	mlx->fractal->viewport.xmin = interpolate(mouse.r + mlx->offset_x,
+			mlx->fractal->viewport.xmin, interpolation);
+	mlx->fractal->viewport.xmax = interpolate(mouse.i + mlx->offset_x,
+			mlx->fractal->viewport.xmax, interpolation);
+	mlx->fractal->viewport.ymin = interpolate(mouse.r + mlx->offset_y,
+			mlx->fractal->viewport.ymin, interpolation);
+	mlx->fractal->viewport.ymax = interpolate(mouse.i + mlx->offset_y,
+			mlx->fractal->viewport.ymax, interpolation);
 }
 
 double	interpolate(double start, double end, double interpolation)

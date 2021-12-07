@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/07 09:22:51 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 16:07:09 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # define K_ARR_UP		126
 # define K_ARR_RIGHT	124
 # define K_ARR_DOWN		125
+# define NUM_PAD_PLUS	69
+# define NUM_PAD_MINUS	78
 
 # define MOUSE_SCROLL_UP	4
 # define MOUSE_SCROLL_DOWN	5
@@ -91,5 +93,6 @@ void	move(int key, t_data *mlx);
 void	init_julias(char *argv, t_data *mlx);
 void	init_image(t_data *mlx);
 int		close(void *param);
+void	increment_max_iter(int key, t_data *mlx);
 
 #endif
