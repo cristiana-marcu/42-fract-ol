@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:58 by RAMON             #+#    #+#             */
-/*   Updated: 2021/12/07 00:31:58 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 09:22:51 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ int		julia(t_data *mlx, t_complex z);
 void	move(int key, t_data *mlx);
 void	init_julias(char *argv, t_data *mlx);
 void	init_image(t_data *mlx);
+int		close(void *param);
 
 #endif

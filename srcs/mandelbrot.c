@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:45:57 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 22:40:57 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 11:10:42 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	mandelbrot(t_data *mlx, t_complex z, t_complex c)
 	double	n;
 	double	temp;
 
-	i = 0; //Possible to initialize it at -1 if I get short on lines and in the loop ++i
+	i = 0;
 	n = z.r * z.r + z.i * z.i;
 	temp = 0;
 	while (i < mlx->fractal->max_iter && n < 4)

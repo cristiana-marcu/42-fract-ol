@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:44:53 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 22:39:11 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 15:02:20 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,12 @@ void	move(int key, t_data *mlx)
 	aux.r = fabs(mlx->fractal->viewport.xmax - mlx->fractal->viewport.xmin);
 	aux.i = fabs(mlx->fractal->viewport.ymax - mlx->fractal->viewport.ymin);
 	if (key == K_ARR_UP)
-	{
-		mlx->fractal->viewport.ymin -= aux.i * 0.05;
-		mlx->fractal->viewport.ymax -= aux.i * 0.05;
-	}
+		mlx->offset_y += aux.i * 20;
 	else if (key == K_ARR_DOWN)
-	{
-		mlx->fractal->viewport.ymin += aux.i * 0.05;
-		mlx->fractal->viewport.ymax += aux.i * 0.05;
-	}
+		mlx->offset_y -= aux.i * 20;
 	else if (key == K_ARR_LEFT)
-	{
-		mlx->fractal->viewport.xmin -= aux.r * 0.05;
-		mlx->fractal->viewport.xmax -= aux.r * 0.05;
-	}
+		mlx->offset_x += aux.i * 20;
 	else if (key == K_ARR_RIGHT)
-	{
-		mlx->fractal->viewport.xmin += aux.r * 0.05;
-		mlx->fractal->viewport.xmax += aux.r * 0.05;
-	}
+		mlx->offset_x -= aux.i * 20;
 	fractol(mlx);
 }
