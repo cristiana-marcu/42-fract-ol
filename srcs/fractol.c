@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:48:18 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 22:37:31 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 01:06:10 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	fill_pixel(int x, int y, t_data *mlx)
 	else if (mlx->fractal->name == JULIA)
 		i = julia(mlx, c);
 	if (i == mlx->fractal->max_iter)
-		my_mlx_pixel_put(mlx, x, y, create_trgb(0, 187, 0, 47));
+		my_mlx_pixel_put(mlx, x, y, create_trgb(0, 58, 0, 213));
 	else //TODO calcular color en función de i
 		my_mlx_pixel_put(mlx, x, y, calculate_color(i, mlx));
 }
