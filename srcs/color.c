@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:51:19 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 22:36:09 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/07 00:44:40 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ int	calculate_color(int i, t_data *mlx)
 	int	r;
 	int	g;
 	int	b;
+	double	aux;
 
 	t = 0;
-	r = (65 * i) / mlx->fractal->max_iter;
-	g = (95 * i) / mlx->fractal->max_iter;
-	b = (185 * i) / mlx->fractal->max_iter;
+	aux = (double)i / mlx->fractal->max_iter;
+	r = (int)9 * (1 - aux) * pow(aux, 3) * 255;
+	g = (int)15 * pow((1 - aux), 2) * pow(aux, 2) * 255;
+	b = (int)8.5 * pow((1 - aux), 3) * aux * 255;
 	return (create_trgb(t, r, g, b));
 }
