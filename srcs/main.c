@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/12/08 10:32:09 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/08 10:48:58 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	mlx = init(argv);
 	if (argc != 3 && ft_strncmp(argv[1], "Julia", 5) == 0)
 		print_error("Wrong arguments. Type [Julia 1] [Julia 2] ... [Julia 5]");
-	else
+	else if (ft_strncmp(argv[1], "Julia", 5) == 0)
 		init_julias(argv[2], mlx);
 	fractol(mlx);
 	mlx_key_hook(mlx->win, hook_keydown, mlx);
@@ -60,5 +60,3 @@ int	main(int argc, char **argv)
 	mlx_loop(mlx->mlx);
 	return (0);
 }
-
-//Places where I malloc: init function, match_fractal function

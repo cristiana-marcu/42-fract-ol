@@ -6,7 +6,7 @@
 #    By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/22 16:47:15 by cmarcu            #+#    #+#              #
-#    Updated: 2021/12/07 19:12:22 by cmarcu           ###   ########.fr        #
+#    Updated: 2021/12/08 10:44:28 by cmarcu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,5 +51,7 @@ fclean:	clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+bonus: all
 
 .PHONY:	all clean fclean re
