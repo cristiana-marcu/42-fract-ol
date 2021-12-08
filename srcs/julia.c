@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:14:22 by cmarcu            #+#    #+#             */
-/*   Updated: 2021/12/06 22:38:18 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/08 10:33:47 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ void	init_julias(char *argv, t_data *mlx)
 		mlx->julia = (t_complex){.r = -0.203333, .i = -0.696667};
 	else if (!ft_strncmp(argv, "5", 1))
 		mlx->julia = (t_complex){.r = 0.371504, .i = -0.153893 };
+	else
+		print_error("Wrong arguments. Type [Julia 1] [Julia 2] ... [Julia 5]");
 }

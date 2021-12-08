@@ -6,7 +6,7 @@
 /*   By: cmarcu <cmarcu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:29:10 by cristianama       #+#    #+#             */
-/*   Updated: 2021/12/07 19:09:03 by cmarcu           ###   ########.fr       */
+/*   Updated: 2021/12/08 10:32:09 by cmarcu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ int	main(int argc, char **argv)
 	t_data	*mlx;
 
 	if (argc != 2 && ft_strncmp(argv[1], "Julia", 5) != 0)
-		print_error("Wrong number of arguments. Type [Mandelbrot] [Julia]");
+		print_error("Wrong arguments. Type [Mandelbrot] [Julia]");
 	mlx = init(argv);
-	if (argc == 3)
+	if (argc != 3 && ft_strncmp(argv[1], "Julia", 5) == 0)
+		print_error("Wrong arguments. Type [Julia 1] [Julia 2] ... [Julia 5]");
+	else
 		init_julias(argv[2], mlx);
 	fractol(mlx);
 	mlx_key_hook(mlx->win, hook_keydown, mlx);
